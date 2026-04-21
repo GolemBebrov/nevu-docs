@@ -1,0 +1,30 @@
+site_name: My Docs
+
+theme:
+  name: material
+  language: en 
+  palette:
+    - scheme: slate
+      primary: purple
+      accent: light blue
+    - scheme: default
+      primary: indigo
+      accent: indigo
+  features:
+    - navigation.tabs 
+    - navigation.sections 
+    - search.highlight 
+    - content.code.copy 
+  
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/GolemBebrov
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/nevu-ui/ 
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
