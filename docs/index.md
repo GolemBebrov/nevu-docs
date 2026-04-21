@@ -1,4 +1,4 @@
-# Welcome to the Nevu-UI wiki!
+# Welcome to Nevu-UI wiki!
 
 ![Example1](https://github.com/GolemBebrov/nevu-ui/blob/main/assets/title.png)
 #### warning: partially written by AI (✅ - created, ✔️ - created by ai, ❌ not created)
