@@ -1,37 +1,53 @@
+## LayoutType
+### Basic layout without any logic for arranging elements.
+### Specific kwargs:
+| Argument | Type | Description |
+| :--- | :--- | :--- |
+| `content` | `[NevuObject]` | initial content. |
+| `borders` | `BorderConfig` | specific border configuration. |
 
-# Layouts
+### Methods:
+| Name | Kwargs | Description |
+| :--- | :--- | :--- |
+| `add_items` | Specific for layout | only works in children. |
+| `add_item` | `item: NevuObject` | adds item to the layout. |
+| `add_floating_item` | `item: NevuObject` | adds floating item to the layout. |
+| `get_item_by_id` | `id: int` | searching by id returns item or None. |
+| `get_item_by_id_strict` | `id: int` | searching by id returns item or raises exception. |
 
-All Layouts accept base parameters: `size`, `style`, `content` (a list/dictionary of child elements).
+### StaticMethods:
+| Name | Kwargs | ReturnType | Description |
+| :--- | :--- | :--- | --- |
+| `is_layout` | NevuObject | bool | returns True if NevuObject is a LayoutType. |
+| `is_widget` | NevuObject | bool | returns True if NevuObject is a Widget. |
 
----
-
-## `StackColumn` / `StackRow`
-### Arranges elements one after another vertically (Column) or horizontally (Row).
-* **Specific kwargs:**
-  * `spacing` (int | float): Distance between elements (default is 10).
-* **Methods:**
-  * `add_item(item: NevuObject, alignment: Align)` — Add an element with alignment.
-
----
-
-
-
----
-
-
+### Use case:
 ```python
-Row((300, 300), y = 3, content = {
-    2: Label("Text", (250, 100))
-})
+from nevu_ui import *
+import pygame
+
+pygame.init()
+
+window = Window((500, 500), title = "LayoutType example")
+
+menu = Menu(window, (100%vw, 100%vh))
+
+lbla = Label("A", [100, 50], single_instance = True) #Single instance is important
+lblb = Label("B", [100, 50], single_instance = True) 
+
+lbla.coordinates = NvVector2(50, 50) #nvvector 2 in IMPORTANT !!!
+lblb.coordinates = NvVector2(200, 200)
+
+lay = LayoutType([100*vw, 100*vh])
+lay.add_floating_item(lbla)
+lay.add_floating_item(lblb)
+
+menu.layout = lay
+
+while True:
+    window.begin_frame()
+    window.update()
+    menu.update()
+    menu.draw()
+    window.end_frame()
 ```
-
----
-
-## `ScrollableColumn` / `ScrollableRow`
-### A scrollable container (a ScrollBar appears if the content doesn't fit).
-* **Specific kwargs:**
-  * `spacing` (int | float): Spacing between elements.
-  * `arrow_scroll_power` (int): Scroll speed using arrow keys.
-  * `wheel_scroll_power` (int): Scroll speed using the mouse wheel.
-  * `inverted_scrolling` (bool): Invert scrolling.
-  * `scrollbar_perc` (NvVector2): Custom slider size in percentages.
