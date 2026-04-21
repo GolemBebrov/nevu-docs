@@ -1,17 +1,16 @@
-# Welcome to MkDocs
+# Welcome to the Nevu-UI wiki!
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+![Example1](https://github.com/GolemBebrov/nevu-ui/blob/main/assets/title.png)
+### warning: partially written by AI (✅ - created, ✔️ - created by ai, ❌ not created)
 
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.asdas asdasdasd 
+# Guide to the basics of this framework:
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+1. ### <a href=https://github.com/GolemBebrov/nevu-ui/wiki/Style>Quick Start ❌</a>
+1. ### <a href=https://github.com/GolemBebrov/nevu-ui/wiki/Style>Style ✅</a>
+1. ### <a href=https://github.com/GolemBebrov/nevu-ui/wiki/Widgets>Widgets ✔️</a>
+1. ### <a href=https://github.com/GolemBebrov/nevu-ui/wiki/Layouts>Layouts ✔️</a>
+1. ### <a href=https://github.com/GolemBebrov/nevu-ui/wiki/Overlay>Overlay ✔️</a>
+1. ### <a href=https://github.com/GolemBebrov/nevu-ui/wiki/Utilities>Utilities ✔️</a>
+1. ### <a href=https://github.com/GolemBebrov/nevu-ui/wiki/Style>Animations ❌</a>
+1. ### <a href=https://github.com/GolemBebrov/nevu-ui/wiki/Window>Window ✔️</a>
