@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../column/">
+        <link rel="prev" href="../row/">
       
-      
-        <link rel="next" href="../row/">
       
       
         
@@ -23,7 +21,7 @@
     
     
       
-        <title>Grid - Nevu UI wiki</title>
+        <title>Stack - Nevu UI wiki</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#grid" class="md-skip">
+        <a href="#stackcolumn-stackrow" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Grid
+              Stack
             
           </span>
         </div>
@@ -411,6 +409,62 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../row/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Row
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -428,7 +482,7 @@
   <span class="md-ellipsis">
     
   
-    Grid
+    Stack
   
 
     
@@ -446,7 +500,7 @@
   <span class="md-ellipsis">
     
   
-    Grid
+    Stack
   
 
     
@@ -470,16 +524,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#grid" class="md-nav__link">
+  <a href="#stackcolumn-stackrow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Grid
+        StackColumn / StackRow
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Grid">
+    <nav class="md-nav" aria-label="StackColumn / StackRow">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arranges-elements-one-after-another-vertically-column-or-horizontally-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arranges elements one after another vertically (Column) or horizontally (Row).
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#specific-kwargs" class="md-nav__link">
@@ -528,62 +593,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../row/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Row
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../stack/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Stack
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -616,16 +625,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#grid" class="md-nav__link">
+  <a href="#stackcolumn-stackrow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Grid
+        StackColumn / StackRow
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Grid">
+    <nav class="md-nav" aria-label="StackColumn / StackRow">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arranges-elements-one-after-another-vertically-column-or-horizontally-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arranges elements one after another vertically (Column) or horizontally (Row).
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#specific-kwargs" class="md-nav__link">
@@ -682,10 +702,16 @@
 
 
 
-  <h1>Grid</h1>
+  <h1>Stack</h1>
 
-<h2 id="grid"><code>Grid</code></h2>
-<p>A rigid grid. Elements are positioned by cell coordinates.</p>
+<h2 id="stackcolumn-stackrow"><code>StackColumn</code> / <code>StackRow</code></h2>
+<h3 id="arranges-elements-one-after-another-vertically-column-or-horizontally-row">Arranges elements one after another vertically (Column) or horizontally (Row).</h3>
+<ul>
+<li><strong>Specific kwargs:</strong></li>
+<li><code>spacing</code> (int | float): Distance between elements (default is 10).</li>
+<li><strong>Methods:</strong></li>
+<li><code>add_item(item: NevuObject, alignment: Align)</code> — Add an element with alignment.</li>
+</ul>
 <h3 id="specific-kwargs">Specific kwargs:</h3>
 <table>
 <thead>
@@ -698,18 +724,13 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><code>content</code></td>
-<td style="text-align: left;"><code>{(int, int): NevuObject}</code></td>
+<td style="text-align: left;"><code>([Align, NevuObject])</code></td>
 <td style="text-align: left;">initial content.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>row</code> / <code>x</code></td>
-<td style="text-align: left;"><code>int</code></td>
-<td style="text-align: left;">number of rows.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>column</code> / <code>y</code></td>
-<td style="text-align: left;"><code>int</code></td>
-<td style="text-align: left;">number of columns.</td>
+<td style="text-align: left;"><code>spacing</code></td>
+<td style="text-align: left;"><code>int | float</code></td>
+<td style="text-align: left;">distance between elements(default is 10).</td>
 </tr>
 </tbody>
 </table>
@@ -725,8 +746,8 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><code>add_item</code></td>
-<td style="text-align: left;"><code>item: NevuObject, x: int, y: int</code></td>
-<td style="text-align: left;">adds item into specified cell, starting from 1.</td>
+<td style="text-align: left;"><code>item: NevuObject, alignment: Align</code></td>
+<td style="text-align: left;">adds item to the end of the stack.</td>
 </tr>
 </tbody>
 </table>
@@ -736,15 +757,16 @@
 
 <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 
-<span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Grid example&quot;</span><span class="p">)</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Stack example&quot;</span><span class="p">)</span>
 
 <span class="n">menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="o">%</span><span class="n">vw</span><span class="p">,</span> <span class="mi">100</span><span class="o">%</span><span class="n">vh</span><span class="p">))</span>
 
-<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">((</span><span class="mi">100</span><span class="o">%</span><span class="n">vw</span><span class="p">,</span> <span class="mi">100</span><span class="o">%</span><span class="n">vh</span><span class="p">),</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>  <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="n">Label</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
-<span class="p">})</span>
+<span class="n">stack</span> <span class="o">=</span> <span class="n">StackColumn</span><span class="p">(</span><span class="n">content</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">Label</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">))),</span>
+    <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">Label</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">))),</span>
+<span class="p">])</span>
 
-<span class="n">menu</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">grid</span>
+<span class="n">menu</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">stack</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">window</span><span class="o">.</span><span class="n">begin_frame</span><span class="p">()</span>
