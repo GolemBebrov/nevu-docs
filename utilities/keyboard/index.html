@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#keyboard" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1363,6 +1368,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1379,6 +1402,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        keyboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="keyboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1400,6 +1479,34 @@
     
   
     Mouse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nevu_event/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nevu event
   
 
     
@@ -1777,6 +1884,53 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        keyboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="keyboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1794,7 +1948,69 @@
 
   <h1>Keyboard</h1>
 
+<h2 id="keyboard"><code>keyboard</code></h2>
+<p>An singleton object to work with keyboard.</p>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Kwargs</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>update</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;">updates keyboard state.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>is_fdown</code></td>
+<td style="text-align: left;"><code>key_code: Keys</code></td>
+<td style="text-align: left;">checks if key is 1 time pressed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>is_down</code></td>
+<td style="text-align: left;"><code>key_code: Keys</code></td>
+<td style="text-align: left;">checks if key is pressed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>is_up</code></td>
+<td style="text-align: left;"><code>key_code: Keys</code></td>
+<td style="text-align: left;">checks if key is released.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="use-case">Use case</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Pygame</label><label for="__tabbed_1_2">Raylib</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nevu_ui</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
 
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;keyboard example&quot;</span><span class="p">)</span>
+
+<span class="n">keyboard</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">keyboard</span><span class="o">.</span><span class="n">is_fdown</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nevu_ui</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyray</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;keyboard example&quot;</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">Backend</span><span class="o">.</span><span class="n">RayLib</span><span class="p">)</span>
+
+<span class="n">keyboard</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">keyboard</span><span class="o">.</span><span class="n">is_fdown</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<p><em><small>Created with GGen v1.0.9 for nevu_ui v0.7.5</small></em></p>
 
 
 

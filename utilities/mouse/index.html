@@ -12,7 +12,7 @@
         <link rel="prev" href="../keyboard/">
       
       
-        <link rel="next" href="../time/">
+        <link rel="next" href="../nevu_event/">
       
       
         
@@ -72,6 +72,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#mouse" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -1391,6 +1396,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mouse
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1408,6 +1431,101 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mouse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mouse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nevu_event/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nevu event
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1777,6 +1895,64 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mouse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mouse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1794,7 +1970,143 @@
 
   <h1>Mouse</h1>
 
+<h2 id="mouse"><code>mouse</code></h2>
+<p>An singleton object to work with mouse.</p>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Kwargs</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>update</code></td>
+<td style="text-align: left;"><code>events: list | None = None</code></td>
+<td style="text-align: left;">updates mouse state.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getters">Getters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">ReturnType</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>pos</code></td>
+<td style="text-align: left;"><code>NvVector2</code></td>
+<td style="text-align: left;">current mouse position.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>wheel_y</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;">total vertical scroll value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>left_fdown</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if left button is 1 time pressed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>left_down</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if left button is pressed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>left_up</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if left button is released.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>right_fdown</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if right button is 1 time pressed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>right_down</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if right button is pressed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>right_up</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if right button is released.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>center_fdown</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if middle button is 1 time pressed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>center_down</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if middle button is pressed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>center_up</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if middle button is released.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>any_down</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if any button is pressed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dragging</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if user is dragging with left button.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>wheel_up</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if wheel was scrolled up.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>wheel_down</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">checks if wheel was scrolled down.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="use-case">Use case</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Pygame</label><label for="__tabbed_1_2">Raylib</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nevu_ui</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
 
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;mouse example&quot;</span><span class="p">)</span>
+
+<span class="n">mouse</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">mouse</span><span class="o">.</span><span class="n">left_fdown</span>
+<span class="n">mouse</span><span class="o">.</span><span class="n">pos</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nevu_ui</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyray</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;mouse example&quot;</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">Backend</span><span class="o">.</span><span class="n">RayLib</span><span class="p">)</span>
+
+<span class="n">mouse</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">mouse</span><span class="o">.</span><span class="n">left_fdown</span>
+<span class="n">mouse</span><span class="o">.</span><span class="n">pos</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<p><em><small>Created with GGen v1.0.9 for nevu_ui v0.7.5</small></em></p>
 
 
 

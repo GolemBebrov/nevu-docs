@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../mouse/">
+        <link rel="prev" href="../nevu_event/">
       
       
         <link rel="next" href="../../widgets/button/">
@@ -72,6 +72,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#time" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -1409,6 +1414,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../nevu_event/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nevu event
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1418,6 +1451,24 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1435,6 +1486,73 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        time
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1777,6 +1895,64 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        time
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1794,7 +1970,83 @@
 
   <h1>Time</h1>
 
+<h2 id="time"><code>time</code></h2>
+<p>A singleton object to track time, delta time, and FPS.</p>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Kwargs</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>update</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;">calculates delta time and fps for the current frame.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getters">Getters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">ReturnType</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>delta_time / dt</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;">the time difference between the current and last frame.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fps</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;">current frames per second (rounded).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>float_fps</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;">precise (non-rounded) frames per second.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="use-case">Use case</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Pygame</label><label for="__tabbed_1_2">Raylib</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nevu_ui</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
 
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;time example&quot;</span><span class="p">)</span>
+
+<span class="n">time</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">dt</span>
+<span class="n">time</span><span class="o">.</span><span class="n">float_fps</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nevu_ui</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyray</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;time example&quot;</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">Backend</span><span class="o">.</span><span class="n">RayLib</span><span class="p">)</span>
+
+<span class="n">time</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">dt</span>
+<span class="n">time</span><span class="o">.</span><span class="n">float_fps</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<p><em><small>Created with GGen v1.0.9 for nevu_ui v0.7.5</small></em></p>
 
 
 
