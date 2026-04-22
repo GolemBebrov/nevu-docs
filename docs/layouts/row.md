@@ -1,37 +1,72 @@
 ## `Row`
-### Specified `Grid` with locked x cells.
-### Specific kwargs:
+specified `Grid` with locked y cells.
+
+### `Row` is a subclass of: `Grid`
+
+### Specific kwargs
 | Argument | Type | Description |
 | :--- | :--- | :--- |
 | `content` | `{int: NevuObject}` | initial content. |
-| `row` / `x` | `int` | number of rows. |
+| `row / x` | `int` | number of rows. |
 
-### Methods:
+### Methods
 | Name | Kwargs | Description |
 | :--- | :--- | :--- |
-| `add_item` | `item: NevuObject, x: int` | adds item into specified row, starting from 1. |
+| `add_item` | `item: NevuObject, x: int` | adds item into specified cell, starting from 1. |
 
-### Use case:
-```python
-from nevu_ui import *
-import pygame
+### Use case
+=== "Pygame" 
 
-pygame.init()
+    ```python
+    from nevu_ui import *
+    import pygame
 
-window = Window((500, 500), title = "Row example")
+    pygame.init()
 
-menu = Menu(window, (100%vw, 100%vh))
+    window = Window((500, 500), title = "Row example")
 
-row = Row((100%vw, 100%vh), x = 3, content = {
-    2: Label("Text", (250, 100))
-})
+    menu = Menu(window, (100%vw, 100%vh))
 
-menu.layout = row
+    layout = Row((100%vw, 100%vh), x = 3, content = {
+        2: Label("Text", (250, 100))
+    })
 
-while True:
-    window.begin_frame()
-    window.update()
-    menu.update()
-    menu.draw()
-    window.end_frame()
-```
+    menu.layout = layout
+
+    while True:
+        window.begin_frame()
+        window.update()
+        menu.update()
+        menu.draw()
+        window.end_frame()
+
+    ```
+
+=== "Raylib"
+
+    ```python
+    from nevu_ui import *
+    import pyray
+
+    window = Window((500, 500), title = "Row example", backend = Backend.RayLib)
+
+    menu = Menu(window, (100%vw, 100%vh))
+
+    layout = Row((100%vw, 100%vh), x = 3, content = {
+        2: Label("Text", (250, 100))
+    })
+
+    menu.layout = layout
+
+    while True:
+        window.begin_frame()
+        window.update()
+        menu.update()
+        menu.draw()
+        window.end_frame()
+
+    ```
+
+
+---
+*<small>Created with GGen v1.0.9 for nevu_ui v0.7.5</small>*

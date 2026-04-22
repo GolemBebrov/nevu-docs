@@ -1,18 +1,14 @@
-## `Column`
-specified `Grid` with locked x cells. <small> >w< - easter egg 2. </small>
+## `Button`
+A standard clickable button.
 
-### `Column` is a subclass of: `Grid`
+### `Button` is a subclass of: `Label`
 
 ### Specific kwargs
 | Argument | Type | Description |
 | :--- | :--- | :--- |
-| `content` | `{int: NevuObject}` | initial content. |
-| `column / y` | `int` | number of columns. |
-
-### Methods
-| Name | Kwargs | Description |
-| :--- | :--- | :--- |
-| `add_item` | `item: NevuObject, y: int` | adds item into specified cell, starting from 1. |
+| `function` | `Callable` | callback function. |
+| `is_active` | `bool` | can be clicked(default is True). |
+| `throw_errors` | `bool` | throw errors on custom click(default is False). |
 
 ### Use case
 === "Pygame" 
@@ -23,13 +19,15 @@ specified `Grid` with locked x cells. <small> >w< - easter egg 2. </small>
 
     pygame.init()
 
-    window = Window((500, 500), title = "Column example")
+    window = Window((500, 500), title = "Button example")
 
     menu = Menu(window, (100%vw, 100%vh))
 
-    layout = Column((100%vw, 100%vh), y = 3, content = {
-        2: Label("Text", (250, 100))
-    })
+    layout = Grid([100%fillw, 100%fillh], x=3, y=3)
+
+    widget = Button(lambda: print("Hi!"), "Text", (100, 100))
+
+    layout.add_item(widget, 2, 2)
 
     menu.layout = layout
 
@@ -48,13 +46,15 @@ specified `Grid` with locked x cells. <small> >w< - easter egg 2. </small>
     from nevu_ui import *
     import pyray
 
-    window = Window((500, 500), title = "Column example", backend = Backend.RayLib)
+    window = Window((500, 500), title = "Button example", backend = Backend.RayLib)
 
     menu = Menu(window, (100%vw, 100%vh))
 
-    layout = Column((100%vw, 100%vh), y = 3, content = {
-        2: Label("Text", (250, 100))
-    })
+    layout = Grid([100%fillw, 100%fillh], x=3, y=3)
+
+    widget = Button(lambda: print("Hi!"), "Text", (100, 100))
+
+    layout.add_item(widget, 2, 2)
 
     menu.layout = layout
 

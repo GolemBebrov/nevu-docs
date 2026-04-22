@@ -1,18 +1,23 @@
-## `Column`
-specified `Grid` with locked x cells. <small> >w< - easter egg 2. </small>
+## `Label`
+A widget that displays text.
 
-### `Column` is a subclass of: `Grid`
+### `Label` is a subclass of: `Widget`
 
 ### Specific kwargs
 | Argument | Type | Description |
 | :--- | :--- | :--- |
-| `content` | `{int: NevuObject}` | initial content. |
-| `column / y` | `int` | number of columns. |
+| `text` | `str` | initial text. |
+| `words_indent` | `bool` | if True, the text when overflows will be splitted into words(default is False). |
 
-### Methods
+### Getters
+| Name | ReturnType | Description |
+| :--- | :--- | :--- |
+| `text` | `str` | current text. |
+
+### Setters
 | Name | Kwargs | Description |
 | :--- | :--- | :--- |
-| `add_item` | `item: NevuObject, y: int` | adds item into specified cell, starting from 1. |
+| `text` | `text` | overwrites current text with a new one. |
 
 ### Use case
 === "Pygame" 
@@ -23,13 +28,15 @@ specified `Grid` with locked x cells. <small> >w< - easter egg 2. </small>
 
     pygame.init()
 
-    window = Window((500, 500), title = "Column example")
+    window = Window((500, 500), title = "Label example")
 
     menu = Menu(window, (100%vw, 100%vh))
 
-    layout = Column((100%vw, 100%vh), y = 3, content = {
-        2: Label("Text", (250, 100))
-    })
+    layout = Grid([100%fillw, 100%fillh], x=3, y=3)
+
+    widget = Label("Text", (100, 100))
+
+    layout.add_item(widget, 2, 2)
 
     menu.layout = layout
 
@@ -48,13 +55,15 @@ specified `Grid` with locked x cells. <small> >w< - easter egg 2. </small>
     from nevu_ui import *
     import pyray
 
-    window = Window((500, 500), title = "Column example", backend = Backend.RayLib)
+    window = Window((500, 500), title = "Label example", backend = Backend.RayLib)
 
     menu = Menu(window, (100%vw, 100%vh))
 
-    layout = Column((100%vw, 100%vh), y = 3, content = {
-        2: Label("Text", (250, 100))
-    })
+    layout = Grid([100%fillw, 100%fillh], x=3, y=3)
+
+    widget = Label("Text", (100, 100))
+
+    layout.add_item(widget, 2, 2)
 
     menu.layout = layout
 
